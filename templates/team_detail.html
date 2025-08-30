@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ team.full_name }}</h2>
+<ul class="list-group mb-3">
+  <li class="list-group-item"><strong>Ville :</strong> {{ team.city or 'N/A' }}</li>
+  <li class="list-group-item"><strong>Abréviation :</strong> {{ team.abbreviation or 'N/A' }}</li>
+  <li class="list-group-item"><strong>Conférence :</strong> {{ team.conference or 'N/A' }}</li>
+  <li class="list-group-item"><strong>Division :</strong> {{ team.division or 'N/A' }}</li>
+</ul>
+
+<h4>Joueurs de l’équipe</h4>
+<div class="row">
+  {% for p in players %}
+  <div class="col-md-3 mb-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ p.first_name }} {{ p.last_name }}</h5>
+        <a href="{{ url_for('player_detail', player_id=p.id) }}" class="btn btn-sm btn-secondary">Voir joueur</a>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <p>Aucun joueur trouvé pour cette équipe.</p>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ game.home_team.full_name }} vs {{ game.visitor_team.full_name }}</h2>
+<p>Date : {{ game.local_date }}</p>
+<ul class="list-group mb-3">
+  <li class="list-group-item">Saison : {{ game.season }}</li>
+  <li class="list-group-item">Période : {{ game.period }}</li>
+  <li class="list-group-item">Durée : {{ game.status }}</li>
+  <li class="list-group-item">Score domicile : {{ game.home_team_score }}</li>
+  <li class="list-group-item">Score extérieur : {{ game.visitor_team_score }}</li>
+</ul>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card p-3">
+      <h5>Équipe domicile : {{ game.home_team.full_name }}</h5>
+      <a href="{{ url_for('team_detail', team_id=game.home_team.id) }}" class="btn btn-sm btn-info">Voir équipe</a>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card p-3">
+      <h5>Équipe extérieure : {{ game.visitor_team.full_name }}</h5>
+      <a href="{{ url_for('team_detail', team_id=game.visitor_team.id) }}" class="btn btn-sm btn-info">Voir équipe</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
