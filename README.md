@@ -132,4 +132,4 @@ Le serveur démarre sur 👉 [http://127.0.0.1:5000](http://127.0.0.1:5000)
 ## ✨ Auteur
 
 Projet développé dans le cadre du **Devoir Compensatoire B2 – Ynov**.  
-Réalisé par : **Ton Nom**
+Réalisé par : **Karl Daval-Leclercq**
