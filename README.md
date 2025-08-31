@@ -21,6 +21,8 @@ projet-compensatoire/
 ├── forms.py
 ├── models.py
 ├── requirements.txt
+├── .env                # contient la clé API (non versionné)
+├── .gitignore
 ├── README.md
 ├── templates/
 │   ├── base.html
@@ -71,10 +73,13 @@ L’API **balldontlie v1** requiert une clé API gratuite.
 
 1. Inscrivez-vous sur 👉 [balldontlie.io](https://balldontlie.io).  
 2. Récupérez votre **clé API** dans votre tableau de bord.  
-3. Ouvrez `config.py` et ajoutez :
-   ```python
-   BALLEDONTLIE_API_KEY = "votre_cle_api"
+3. Créez un fichier **`.env`** à la racine du projet avec ce contenu :
+
    ```
+   BALLEDONTLIE_API_KEY=ta_cle_api
+   ```
+
+⚠️ Le fichier `.env` est listé dans `.gitignore` → il ne sera pas poussé sur GitHub, pour garder ta clé privée.
 
 ---
 
@@ -126,6 +131,7 @@ Le serveur démarre sur 👉 [http://127.0.0.1:5000](http://127.0.0.1:5000)
 - **Flask-WTF**
 - **SQLite (SQLAlchemy)**
 - **Bootstrap 5** (interface)
+- **python-dotenv** (gestion de la clé API en `.env`)
 
 ---
 
